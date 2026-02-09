@@ -8,35 +8,35 @@
     <title>Chic Look - Classic, Smart, Colorful</title>
 </head>
 <body>
-<!-- Top Header -->
-<div class="top-header">
-    <div class="container">
-        <div class="header-left">
-        <span>Welcome to Chic Look!</span>
-</div>
-<div class="header-right">
-    <a href="#">Sign In</a>
-    <span>|</span>
-    <a href="#">Register</a>
-    <span>|</span>
-    <a href="#">Help</a>
-    </div>
-    </div>
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="container">
+            <div class="header-left">
+                <span>Welcome to Chic Look!</span>
+            </div>
+            <div class="hseader-right">
+                <a href="#">Sign In</a>
+                <span>|</span>
+                <a href="#">Register</a>
+                <span>|</span>
+                <a href="#">Help</a>
+            </div>
+        </div>
     </div>
 
     <!-- Main Navigation -->
     <nav class="main-nav">
-    <div class="container">
-    <div class="nav-content">
-    <!-- Logo -->
-    <div class="logo">
-    <h1>Chic Look</h1>
-    <p class="tagline">Classic, Smart, Colorful</p>
-    </div>
+        <div class="container">
+            <div class="nav-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <h1>Chic Look</h1>
+                    <p class="tagline">Classic, Smart, Colorful</p>
+                </div>
 
-    <!-- Search Bar -->
-    <div class="search-bar">
-    <select class="search-category">
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <select class="search-category">
                         <option>All Categories</option>
                         <option>Cloths</option>
                         <option>Glasses</option>
@@ -71,7 +71,7 @@
             <!-- Secondary Navigation -->
             <div class="secondary-nav">
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#" onclick="showHome()">Home</a></li>
                     <li><a href="#new">New Arrivals</a></li>
                     <li><a href="#fashion">Fashion</a></li>
                     <li><a href="#sale">Sale</a></li>
@@ -82,72 +82,113 @@
         </div>
     </nav>
 
-    <!-- Hero Banner -->
-    <section class="hero-banner">
-        <img src="./home page.jpg" alt="Chic Look Home Page Banner">
-    </section>
+    <!-- HOME PAGE CONTENT -->
+    <div id="home-content">
+        <!-- Hero Banner -->
+        <section class="hero-banner">
+            <img src="./home page.jpg" alt="Chic Look Home Page Banner">
+        </section>
 
-    <!-- Shop By Category -->
-    <section class="categories">
-        <div class="container">
-            <h2 class="section-title">Shop By Category</h2>
-            <div class="category-grid">
-                <!-- Category 1 - Cloths -->
-                <div class="category-card">
-                    <div class="category-image">
-                        <img src="./cloths.jpg" alt="Cloths">
-                    </div>
-                    <h3>Cloths</h3>
-                    <a href="cloths.html" class="btn">Explore</a>
-                </div>
+     <!-- Products Section -->
+<section class="products-section">
+    <div class="container">
+        <h2 class="section-title">Featured Products</h2>
+        
+        <div class="row">
+            <!-- Product 1 - Leather Purse -->
+            <div class="card col-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="img-holder"><img src="purse3.jpg" alt="Leather Purse"></div>
+                <div class="card-category">Purse</div>
+                <div class="card-title">Leather Purse</div>
+                <div class="card-price">2000</div>
+                <a href="#detail" class="detail-btn">Buy Now</a>
+            </div>
 
-                <!-- Category 2 - Glasses -->
-                <div class="category-card">
-                    <div class="category-image">
-                        <img src="./glasses.jpg" alt="Glasses">
-                    </div>
-                    <h3>Glasses</h3>
-                    <a href="glasses.html" class="btn">Explore</a>
-                </div>
+            <!-- Product 2 - Chiffon Dress -->
+            <div class="card col-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="img-holder"><img src="siffon.jpg" alt="Chiffon Dress"></div>
+                <div class="card-category">Ladies Wear</div>
+                <div class="card-title">Chiffon Dress</div>
+                <div class="card-price">3000</div>
+                <a href="#detail" class="detail-btn">Buy Now</a>
+            </div>
 
-                <!-- Category 3 - Jewelry -->
-                <div class="category-card">
-                    <div class="category-image">
-                        <img src="./jewelry.jpg" alt="Jewelry">
-                    </div>
-                    <h3>Jewelry</h3>
-                    <a href="jewelry.html" class="btn">Explore</a>
-                </div>
+            <!-- Product 3 - Linen Pants -->
+            <div class="card col-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="img-holder"><img src="linenPant.jpg" alt="Linen Pants"></div>
+                <div class="card-category">Clothing</div>
+                <div class="card-title">Linen Pants</div>
+                <div class="card-price">2000</div>
+                <a href="#detail" class="detail-btn">Buy Now</a>
+            </div>
 
-                <!-- Category 4 - Purse -->
-                <div class="category-card">
-                    <div class="category-image">
-                        <img src="./purse.jpg" alt="Purse">
-                    </div>
-                    <h3>Purse</h3>
-                    <a href="purse.html" class="btn">Explore</a>
-                </div>
+            <!-- Product 4 - Lace Top -->
+            <div class="card col-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="img-holder"><img src="lace.jpg" alt="Lace Top"></div>
+                <div class="card-category">Elegant for Anytime</div>
+                <div class="card-title">Lace Top</div>
+                <div class="card-price">1500</div>
+                <a href="#detail" class="detail-btn">Buy Now</a>
+            </div>
 
-                <!-- Category 5 - Heels -->
-                <div class="category-card">
-                    <div class="category-image">
-                        <img src="./heels.jpg" alt="Heels">
-                    </div>
-                    <h3>Heels</h3>
-                    <a href="heels.html" class="btn">Explore</a>
-                </div>
+            <!-- Product 5 - Louis Cardian Perfume -->
+            <div class="card col-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="img-holder"><img src="louis cardin perfume.jpg" alt="Louis Cardian Perfume"></div>
+                <div class="card-category">Fragrance</div>
+                <div class="card-title">Louis Cardian Perfume</div>
+                <div class="card-price">4000</div>
+                <a href="#detail" class="detail-btn">Buy Now</a>
+            </div>
 
-                <!-- Category 6 - Perfume -->
-                <div class="category-card">
-                    <div class="category-image">
-                        <img src="./perfume.jpg" alt="Perfume">
-                    </div>
-                    <h3>Perfume</h3>
-                    <a href="perfume.html" class="btn">Explore</a>
-                </div>
+            <!-- Product 6 - Skinn Titan Perfume -->
+            <div class="card col-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="img-holder"><img src="skinn titan.jpg" alt="Skinn Titan Perfume"></div>
+                <div class="card-category">Fragrance</div>
+                <div class="card-title">Skinn Titan Perfume</div>
+                <div class="card-price">4155</div>
+                <a href="#detail" class="detail-btn">Buy Now</a>
+            </div>
+
+            <!-- Product 7 - Forever Red Perfume -->
+            <div class="card col-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="img-holder"><img src="forever red.jpg" alt="Forever Red Perfume"></div>
+                <div class="card-category">Fragrance</div>
+                <div class="card-title">Forever Red Perfume</div>
+                <div class="card-price">5000</div>
+                <a href="#detail" class="detail-btn">Buy Now</a>
+            </div>
+
+            <!-- Product 8 - Cat Eye Glasses -->
+            <div class="card col-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="img-holder"><img src="glass1.jpg" alt="Cat Eye Glasses"></div>
+                <div class="card-category">Accessories</div>
+                <div class="card-title">Cat Eye Glasses</div>
+                <div class="card-price">2000</div>
+                <a href="#detail" class="detail-btn">Buy Now</a>
+            </div>
+
+            <!-- Product 9 - Sunglasses -->
+            <div class="card col-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="img-holder"><img src="glass4.jpg" alt="Sunglasses"></div>
+                <div class="card-category">Accessories</div>
+                <div class="card-title">Sunglasses</div>
+                <div class="card-price">1500</div>
+                <a href="#detail" class="detail-btn">Buy Now</a>
+            </div>
+
+            <!-- Product 10 - Heels -->
+            <div class="card col-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="img-holder"><img src="heels1.jpg" alt="Heels"></div>
+                <div class="card-category">Women</div>
+                <div class="card-title">Night Evening Heels</div>
+                <div class="card-price">2100</div>
+                <a href="#detail" class="detail-btn">Buy Now</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -162,11 +203,9 @@
                         <li><a href="#">Payment Methods</a></li>
                         <li><a href="#">Free Shipping</a></li>
                         <li><a href="#">Returns & Refunds</a></li>
-                    
                     </ul>
                 </div>
 
-    
                 <!-- Column 2 - My Account -->
                 <div class="footer-column">
                     <h4>My Account</h4>
@@ -188,7 +227,7 @@
                     <div class="social-media">
                         <h5>Follow Us</h5>
                         <div class="social-icons">
-                            <a href="http://www.instagram.com" target="" title="Instagram">
+                            <a href="http://www.instagram.com" target="_blank" title="Instagram">
                                 <i class="fab fa-instagram"></i>
                             </a>
                             <a href="https://www.tiktok.com" target="_blank" title="TikTok">
@@ -211,11 +250,11 @@
                     <div class="footer-links">
                         <a href="#">Privacy Policy</a>
                         <a href="#">Terms of Service</a>
-
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+      
 </body>
 </html>
