@@ -3,258 +3,1048 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chic Look - Luxury Fashion & Accessories</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-    <title>Chic Look - Classic, Smart, Colorful</title>
 </head>
 <body>
-    <!-- Top Header -->
-    <div class="top-header">
-        <div class="container">
-            <div class="header-left">
-                <span>Welcome to Chic Look!</span>
-            </div>
-            <div class="hseader-right">
-                <a href="#">Sign In</a>
-                <span>|</span>
-                <a href="#">Register</a>
-                <span>|</span>
-                <a href="#">Help</a>
-            </div>
-        </div>
-    </div>
-
     <!-- Main Navigation -->
-    <nav class="main-nav">
-        <div class="container">
-            <div class="nav-content">
-                <!-- Logo -->
-                <div class="logo">
-                    <h1>Chic Look</h1>
-                    <p class="tagline">Classic, Smart, Colorful</p>
-                </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container-fluid px-4">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#" onclick="showHome()">
+                <h1 class="brand-name mb-0">CHIC LOOK</h1>
+                <p class="brand-tagline mb-0">Classic, Smart, Colorful</p>
+            </a>
 
-                <!-- Search Bar -->
-                <div class="search-bar">
-                    <select class="search-category">
-                        <option>All Categories</option>
-                        <option>Cloths</option>
-                        <option>Glasses</option>
-                        <option>Jewelry</option>
-                        <option>Purse</option>
-                        <option>Heels</option>
-                        <option>Perfume</option>
-                    </select>
-                    <input type="text" class="search-input" placeholder="Search for products...">
-                    <button class="search-btn">
-                        <i class="fa fa-search"></i>
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            New Arrivals
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="showHome()">This Week</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showHome()">This Month</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" onclick="showAllProducts()">All New Arrivals</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Bags
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="filterProducts('Purse')">Shoulder Bags</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filterProducts('Purse')">Crossbody Bags</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filterProducts('Purse')">Tote Bags</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filterProducts('Purse')">Clutches</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Clothing
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="filterProducts('Ladies Wear')">Dresses</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filterProducts('Clothing')">Tops</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filterProducts('Clothing')">Pants</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Shoes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="filterProducts('Women')">Heels</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filterProducts('Women')">Flats</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filterProducts('Women')">Sandals</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Accessories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="filterProducts('Accessories')">Sunglasses</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filterProducts('Fragrance')">Perfumes</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filterProducts('Accessories')">Jewelry</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showGallery(); return false;">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showContact(); return false;">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger fw-bold" href="#">Sale</a>
+                    </li>
+                </ul>
+
+                <!-- Right Icons -->
+                <div class="d-flex align-items-center gap-3">
+                    <!-- Search -->
+                    <button class="btn btn-link text-dark p-0" data-bs-toggle="modal" data-bs-target="#searchModal">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <!-- Account -->
+                    <div class="dropdown">
+                        <button class="btn btn-link text-dark p-0 dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="far fa-user"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#" onclick="showSignIn(); return false;">Sign In</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showRegister(); return false;">Register</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" onclick="showAccount(); return false;">My Account</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showOrders(); return false;">Orders</a></li>
+                        </ul>
+                    </div>
+                    <!-- Wishlist -->
+                    <button class="btn btn-link text-dark p-0 position-relative">
+                        <i class="far fa-heart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem;">
+                            0
+                        </span>
+                    </button>
+                    <!-- Cart -->
+                    <button class="btn btn-link text-dark p-0 position-relative" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark" style="font-size: 0.6rem;">
+                            0
+                        </span>
                     </button>
                 </div>
-
-                <!-- Cart and Account -->
-                <div class="nav-icons">
-                    <a href="#" class="icon-link">
-                        <i class="far fa-heart"></i>
-                        <span>Wishlist</span>
-                    </a>
-                    <a href="#" class="icon-link">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span>Cart</span>
-                    </a>
-                    <a href="#" class="icon-link">
-                        <i class="far fa-user"></i>
-                        <span>Account</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Secondary Navigation -->
-            <div class="secondary-nav">
-                <ul class="nav-links">
-                    <li><a href="#" onclick="showHome()">Home</a></li>
-                    <li><a href="#new">New Arrivals</a></li>
-                    <li><a href="#fashion">Fashion</a></li>
-                    <li><a href="#sale">Sale</a></li>
-                    <li><a href="#brands">Brands</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
             </div>
         </div>
     </nav>
 
-    <!-- HOME PAGE CONTENT -->
-    <div id="home-content">
-        <!-- Hero Banner -->
-        <section class="hero-banner">
-            <img src="./home page.jpg" alt="Chic Look Home Page Banner">
-        </section>
-
-     <!-- Products Section -->
-<section class="products-section">
-    <div class="container">
-        <h2 class="section-title">Featured Products</h2>
-        
-        <div class="row">
-            <!-- Product 1 - Leather Purse -->
-            <div class="card col-3 col-lg-4 col-md-6 col-sm-12">
-                <div class="img-holder"><img src="purse3.jpg" alt="Leather Purse"></div>
-                <div class="card-category">Purse</div>
-                <div class="card-title">Leather Purse</div>
-                <div class="card-price">2000</div>
-                <a href="#detail" class="detail-btn">Buy Now</a>
-            </div>
-
-            <!-- Product 2 - Chiffon Dress -->
-            <div class="card col-3 col-lg-4 col-md-6 col-sm-12">
-                <div class="img-holder"><img src="siffon.jpg" alt="Chiffon Dress"></div>
-                <div class="card-category">Ladies Wear</div>
-                <div class="card-title">Chiffon Dress</div>
-                <div class="card-price">3000</div>
-                <a href="#detail" class="detail-btn">Buy Now</a>
-            </div>
-
-            <!-- Product 3 - Linen Pants -->
-            <div class="card col-3 col-lg-4 col-md-6 col-sm-12">
-                <div class="img-holder"><img src="linenPant.jpg" alt="Linen Pants"></div>
-                <div class="card-category">Clothing</div>
-                <div class="card-title">Linen Pants</div>
-                <div class="card-price">2000</div>
-                <a href="#detail" class="detail-btn">Buy Now</a>
-            </div>
-
-            <!-- Product 4 - Lace Top -->
-            <div class="card col-3 col-lg-4 col-md-6 col-sm-12">
-                <div class="img-holder"><img src="lace.jpg" alt="Lace Top"></div>
-                <div class="card-category">Elegant for Anytime</div>
-                <div class="card-title">Lace Top</div>
-                <div class="card-price">1500</div>
-                <a href="#detail" class="detail-btn">Buy Now</a>
-            </div>
-
-            <!-- Product 5 - Louis Cardian Perfume -->
-            <div class="card col-3 col-lg-4 col-md-6 col-sm-12">
-                <div class="img-holder"><img src="louis cardin perfume.jpg" alt="Louis Cardian Perfume"></div>
-                <div class="card-category">Fragrance</div>
-                <div class="card-title">Louis Cardian Perfume</div>
-                <div class="card-price">4000</div>
-                <a href="#detail" class="detail-btn">Buy Now</a>
-            </div>
-
-            <!-- Product 6 - Skinn Titan Perfume -->
-            <div class="card col-3 col-lg-4 col-md-6 col-sm-12">
-                <div class="img-holder"><img src="skinn titan.jpg" alt="Skinn Titan Perfume"></div>
-                <div class="card-category">Fragrance</div>
-                <div class="card-title">Skinn Titan Perfume</div>
-                <div class="card-price">4155</div>
-                <a href="#detail" class="detail-btn">Buy Now</a>
-            </div>
-
-            <!-- Product 7 - Forever Red Perfume -->
-            <div class="card col-3 col-lg-4 col-md-6 col-sm-12">
-                <div class="img-holder"><img src="forever red.jpg" alt="Forever Red Perfume"></div>
-                <div class="card-category">Fragrance</div>
-                <div class="card-title">Forever Red Perfume</div>
-                <div class="card-price">5000</div>
-                <a href="#detail" class="detail-btn">Buy Now</a>
-            </div>
-
-            <!-- Product 8 - Cat Eye Glasses -->
-            <div class="card col-3 col-lg-4 col-md-6 col-sm-12">
-                <div class="img-holder"><img src="glass1.jpg" alt="Cat Eye Glasses"></div>
-                <div class="card-category">Accessories</div>
-                <div class="card-title">Cat Eye Glasses</div>
-                <div class="card-price">2000</div>
-                <a href="#detail" class="detail-btn">Buy Now</a>
-            </div>
-
-            <!-- Product 9 - Sunglasses -->
-            <div class="card col-3 col-lg-4 col-md-6 col-sm-12">
-                <div class="img-holder"><img src="glass4.jpg" alt="Sunglasses"></div>
-                <div class="card-category">Accessories</div>
-                <div class="card-title">Sunglasses</div>
-                <div class="card-price">1500</div>
-                <a href="#detail" class="detail-btn">Buy Now</a>
-            </div>
-
-            <!-- Product 10 - Heels -->
-            <div class="card col-3 col-lg-4 col-md-6 col-sm-12">
-                <div class="img-holder"><img src="heels1.jpg" alt="Heels"></div>
-                <div class="card-category">Women</div>
-                <div class="card-title">Night Evening Heels</div>
-                <div class="card-price">2100</div>
-                <a href="#detail" class="detail-btn">Buy Now</a>
+    <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Search Products</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text bg-white border-end-0">
+                            <i class="fas fa-search text-muted"></i>
+                        </span>
+                        <input type="text" class="form-control border-start-0 ps-0" placeholder="Search for products, brands..." id="searchInput">
+                    </div>
+                    <div class="mt-4">
+                        <h6 class="text-muted small mb-3">POPULAR SEARCHES</h6>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="#" class="btn btn-sm btn-outline-secondary" onclick="searchProducts('Leather')">Leather Bags</a>
+                            <a href="#" class="btn btn-sm btn-outline-secondary" onclick="searchProducts('Heels')">Designer Heels</a>
+                            <a href="#" class="btn btn-sm btn-outline-secondary" onclick="searchProducts('Perfume')">Perfume</a>
+                            <a href="#" class="btn btn-sm btn-outline-secondary" onclick="searchProducts('Sunglasses')">Sunglasses</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</section>
 
+    <!-- Cart Offcanvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title">Shopping Bag</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="text-center py-5">
+                <i class="fas fa-shopping-bag fa-3x text-muted mb-3"></i>
+                <p class="text-muted">Your bag is empty</p>
+                <button class="btn btn-dark" data-bs-dismiss="offcanvas" onclick="showHome()">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
 
+    <!-- Constant Hero Banner -->
+    <div class="hero-banner-constant">
+        <img src="./home page.jpg" alt="Chic Look Banner" class="w-100">
+    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <!-- Column 1 - Customer Service -->
-                <div class="footer-column">
-                    <h4>Customer Service</h4>
-                    <ul>
-                        <li><a href="#">Help and Contacts</a></li>
-                        <li><a href="#">Easy Online Shopping</a></li>
-                        <li><a href="#">Payment Methods</a></li>
-                        <li><a href="#">Free Shipping</a></li>
-                        <li><a href="#">Returns & Refunds</a></li>
-                    </ul>
-                </div>
+    <!-- HOME PAGE CONTENT -->
+    <div id="home-content">
 
-                <!-- Column 2 - My Account -->
-                <div class="footer-column">
-                    <h4>My Account</h4>
-                    <ul>
-                        <li><a href="#">Sign In</a></li>
-                        <li><a href="#">Wishlist</a></li>
-                        <li><a href="#">Manage Your Content</a></li>
-                        <li><a href="#">Account Settings</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 3 - Contact & Social -->
-                <div class="footer-column">
-                    <h4>Connect With Us</h4>
-                    <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> hello@chiclook.com</p>
-                        <p><i class="fas fa-phone"></i> 9800000000</p>
-                    </div>
-                    <div class="social-media">
-                        <h5>Follow Us</h5>
-                        <div class="social-icons">
-                            <a href="http://www.instagram.com" target="_blank" title="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://www.tiktok.com" target="_blank" title="TikTok">
-                                <i class="fab fa-tiktok"></i>
-                            </a>
-                            <a href="https://www.facebook.com" target="_blank" title="Facebook">
-                                <i class="fab fa-facebook"></i>
-                            </a>
+        <!-- New Arrivals Section -->
+        <section class="py-5" id="new-arrivals">
+            <div class="container">
+                <div class="section-header mb-5">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div>
+                            <h2 class="section-title mb-2">New Arrivals This Week</h2>
+                            <p class="text-muted mb-0">Fresh picks for you</p>
                         </div>
-                        <p class="social-handles">@chiclook.official</p>
+                        <button class="btn btn-outline-dark" onclick="showAllProducts()">View All</button>
+                    </div>
+                </div>
+                
+                <!-- Products Grid -->
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4" id="products-grid">
+                    <!-- Products will be loaded here by JavaScript -->
+                </div>
+
+                <!--Bootstrap Pagination -->
+                <nav aria-label="Product pagination" class="mt-5" id="pagination-section">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                        <p class="text-muted mb-0" id="pagination-info">Showing 1-10 of 40 products</p>
+                        <ul class="pagination mb-0" id="pagination-controls">
+                            <!-- Pagination buttons will be generated here -->
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Featured Collection -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="section-header mb-5 text-center">
+                    <h2 class="section-title mb-2">Trending Now</h2>
+                    <p class="text-muted">Handpicked by our stylists</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="featured-card" onclick="filterProducts('Purse')">
+                            <img src="purse3.jpg" alt="Featured Bags" class="img-fluid">
+                            <div class="featured-overlay">
+                                <h3>Luxury Bags</h3>
+                                <p>From NPR 1,500</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="featured-card" onclick="filterProducts('Fragrance')">
+                            <img src="louis cardin perfume.jpg" alt="Featured Perfumes" class="img-fluid">
+                            <div class="featured-overlay">
+                                <h3>Signature Scents</h3>
+                                <p>From NPR 780</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="featured-card" onclick="filterProducts('Women')">
+                            <img src="heels1.jpg" alt="Featured Heels" class="img-fluid">
+                            <div class="featured-overlay">
+                                <h3>Designer Heels</h3>
+                                <p>From NPR 2,000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- GALLERY PAGE -->
+    <div id="gallery-content" style="display: none;">
+        <div class="container py-5">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#" onclick="showHome()">Home</a></li>
+                    <li class="breadcrumb-item active">Gallery</li>
+                </ol>
+            </nav>
+
+            <div class="section-header mb-5 text-center">
+                <h2 class="section-title mb-2">Our Gallery</h2>
+                <p class="text-muted">Explore our stunning collection</p>
+            </div>
+
+            <!-- Gallery Filter Navigation -->
+            <div class="d-flex justify-content-center mb-5 flex-wrap gap-2" id="gallery-filters">
+                <button class="btn btn-outline-dark active" onclick="filterGallery('all')">All</button>
+                <button class="btn btn-outline-dark" onclick="filterGallery('purse')">Purses</button>
+                <button class="btn btn-outline-dark" onclick="filterGallery('clothing')">Clothing</button>
+                <button class="btn btn-outline-dark" onclick="filterGallery('perfume')">Perfumes</button>
+                <button class="btn btn-outline-dark" onclick="filterGallery('glasses')">Glasses</button>
+                <button class="btn btn-outline-dark" onclick="filterGallery('heels')">Heels</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3" id="gallery-grid">
+                <!-- Gallery items will be loaded here -->
+            </div>
+
+            <div class="text-center mt-5">
+                <button class="btn btn-outline-dark px-5" onclick="showHome()">
+                    <i class="fas fa-arrow-left me-2"></i>Back to Home
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SIGN IN PAGE -->
+    <div id="signin-content" style="display: none;">
+        <div class="container py-5">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#" onclick="showHome()">Home</a></li>
+                    <li class="breadcrumb-item active">Sign In</li>
+                </ol>
+            </nav>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-7">
+                    <div class="auth-wrapper">
+                        <div class="text-center mb-4">
+                            <h2 class="section-title mb-2">Welcome Back</h2>
+                            <p class="text-muted">Sign in to your account</p>
+                        </div>
+
+                        <form id="signinForm" onsubmit="submitSignIn(event)">
+                            <div class="mb-3">
+                                <label class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="signinEmail" required placeholder="you@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Password *</label>
+                                <input type="password" class="form-control" id="signinPassword" required placeholder="Enter your password">
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <div class="d-grid mb-3">
+                                <button type="submit" class="btn btn-dark btn-lg">Sign In</button>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-muted small" onclick="alert('Please contact support to reset your password'); return false;">Forgot Password?</a>
+                            </div>
+                        </form>
+
+                        <div class="divider my-4">
+                            <span>OR</span>
+                        </div>
+
+                        <div class="text-center">
+                            <p class="text-muted mb-3">Don't have an account?</p>
+                            <button class="btn btn-outline-dark w-100" onclick="showRegister()">Create Account</button>
+                        </div>
+
+                        <div id="signinSuccess" class="alert alert-success mt-4" style="display: none;">
+                            <i class="fas fa-check-circle me-2"></i>Sign in successful! Redirecting...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- REGISTER PAGE -->
+    <div id="register-content" style="display: none;">
+        <div class="container py-5">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#" onclick="showHome()">Home</a></li>
+                    <li class="breadcrumb-item active">Register</li>
+                </ol>
+            </nav>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="auth-wrapper">
+                        <div class="text-center mb-4">
+                            <h2 class="section-title mb-2">Create Account</h2>
+                            <p class="text-muted">Join Chic Look for exclusive offers</p>
+                        </div>
+
+                        <form id="registerForm" onsubmit="submitRegister(event)">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">First Name *</label>
+                                    <input type="text" class="form-control" id="regFirstName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Last Name *</label>
+                                    <input type="text" class="form-control" id="regLastName" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="regEmail" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="regPhone" placeholder="+977">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Password *</label>
+                                    <input type="password" class="form-control" id="regPassword" required minlength="8">
+                                    <small class="text-muted">Minimum 8 characters</small>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Confirm Password *</label>
+                                    <input type="password" class="form-control" id="regConfirmPassword" required minlength="8">
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                                        <label class="form-check-label small" for="agreeTerms">
+                                            I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="regNewsletter">
+                                        <label class="form-check-label small" for="regNewsletter">
+                                            Subscribe to our newsletter for exclusive offers and updates
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-dark btn-lg w-100">Create Account</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="divider my-4">
+                            <span>OR</span>
+                        </div>
+
+                        <div class="text-center">
+                            <p class="text-muted mb-3">Already have an account?</p>
+                            <button class="btn btn-outline-dark w-100" onclick="showSignIn()">Sign In</button>
+                        </div>
+
+                        <div id="registerSuccess" class="alert alert-success mt-4" style="display: none;">
+                            <i class="fas fa-check-circle me-2"></i>Account created successfully! Redirecting...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MY ACCOUNT PAGE -->
+    <div id="account-content" style="display: none;">
+        <div class="container py-5">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#" onclick="showHome()">Home</a></li>
+                    <li class="breadcrumb-item active">My Account</li>
+                </ol>
+            </nav>
+
+            <div class="row g-4">
+                <!-- Sidebar -->
+                <div class="col-lg-3">
+                    <div class="account-sidebar">
+                        <div class="account-user mb-4">
+                            <div class="account-avatar mb-3">
+                                <i class="fas fa-user-circle fa-4x text-muted"></i>
+                            </div>
+                            <h5 class="mb-1" id="accountUserName">Guest User</h5>
+                            <p class="text-muted small mb-0" id="accountUserEmail">guest@example.com</p>
+                        </div>
+                        <ul class="account-menu">
+                            <li class="active" onclick="showAccountSection('profile')">
+                                <i class="fas fa-user me-2"></i>Profile
+                            </li>
+                            <li onclick="showAccountSection('orders')">
+                                <i class="fas fa-shopping-bag me-2"></i>My Orders
+                            </li>
+                            <li onclick="showAccountSection('addresses')">
+                                <i class="fas fa-map-marker-alt me-2"></i>Addresses
+                            </li>
+                            <li onclick="showAccountSection('wishlist')">
+                                <i class="far fa-heart me-2"></i>Wishlist
+                            </li>
+                            <li onclick="showAccountSection('settings')">
+                                <i class="fas fa-cog me-2"></i>Settings
+                            </li>
+                            <li onclick="signOut()">
+                                <i class="fas fa-sign-out-alt me-2"></i>Sign Out
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Content Area -->
+                <div class="col-lg-9">
+                    <!-- Profile Section -->
+                    <div id="profile-section" class="account-section">
+                        <h3 class="mb-4">Profile Information</h3>
+                        <form id="profileForm" onsubmit="updateProfile(event)">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="profileFirstName" value="Guest">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="profileLastName" value="User">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="profileEmail" value="guest@example.com">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Phone</label>
+                                    <input type="tel" class="form-control" id="profilePhone" value="+977 9800000000">
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-dark">Save Changes</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Orders Section -->
+                    <div id="orders-section" class="account-section" style="display: none;">
+                        <h3 class="mb-4">My Orders</h3>
+                        <div class="orders-list">
+                            <div class="order-card">
+                                <div class="order-header">
+                                    <div>
+                                        <h6 class="mb-1">Order #CHK2024001</h6>
+                                        <p class="text-muted small mb-0">Placed on Jan 15, 2024</p>
+                                    </div>
+                                    <span class="badge bg-success">Delivered</span>
+                                </div>
+                                <div class="order-body">
+                                    <div class="order-item">
+                                        <img src="purse3.jpg" alt="Product" class="order-item-img">
+                                        <div class="flex-grow-1">
+                                            <h6>Leather Purse</h6>
+                                            <p class="text-muted small mb-0">Qty: 1</p>
+                                        </div>
+                                        <strong>NPR 2,000</strong>
+                                    </div>
+                                </div>
+                                <div class="order-footer">
+                                    <strong>Total: NPR 2,000</strong>
+                                    <button class="btn btn-outline-dark btn-sm">View Details</button>
+                                </div>
+                            </div>
+
+                            <div class="order-card">
+                                <div class="order-header">
+                                    <div>
+                                        <h6 class="mb-1">Order #CHK2024002</h6>
+                                        <p class="text-muted small mb-0">Placed on Feb 1, 2024</p>
+                                    </div>
+                                    <span class="badge bg-primary">Processing</span>
+                                </div>
+                                <div class="order-body">
+                                    <div class="order-item">
+                                        <img src="heels1.jpg" alt="Product" class="order-item-img">
+                                        <div class="flex-grow-1">
+                                            <h6>Night Evening Heels</h6>
+                                            <p class="text-muted small mb-0">Qty: 1</p>
+                                        </div>
+                                        <strong>NPR 2,100</strong>
+                                    </div>
+                                </div>
+                                <div class="order-footer">
+                                    <strong>Total: NPR 2,100</strong>
+                                    <button class="btn btn-outline-dark btn-sm">Track Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Addresses Section -->
+                    <div id="addresses-section" class="account-section" style="display: none;">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h3 class="mb-0">Saved Addresses</h3>
+                            <button class="btn btn-outline-dark" onclick="alert('Add new address feature')">
+                                <i class="fas fa-plus me-2"></i>Add Address
+                            </button>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="address-card">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <h6>Home</h6>
+                                        <span class="badge bg-dark">Default</span>
+                                    </div>
+                                    <p class="mb-1">Guest User</p>
+                                    <p class="text-muted small mb-2">Thamel, Kathmandu<br>Nepal<br>+977 9800000000</p>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-sm btn-outline-dark">Edit</button>
+                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wishlist Section -->
+                    <div id="wishlist-section" class="account-section" style="display: none;">
+                        <h3 class="mb-4">My Wishlist</h3>
+                        <div class="row g-4">
+                            <div class="col-md-4 col-sm-6">
+                                <div class="wishlist-item">
+                                    <button class="wishlist-remove" onclick="alert('Remove from wishlist')">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                    <img src="purse5.jpg" alt="Product" class="w-100 mb-2">
+                                    <h6>Designer Purse</h6>
+                                    <p class="text-muted mb-2">NPR 1,500</p>
+                                    <button class="btn btn-dark btn-sm w-100">Add to Bag</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Settings Section -->
+                    <div id="settings-section" class="account-section" style="display: none;">
+                        <h3 class="mb-4">Account Settings</h3>
+                        <div class="settings-group">
+                            <h5>Change Password</h5>
+                            <form id="passwordForm" onsubmit="changePassword(event)">
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <label class="form-label">Current Password</label>
+                                        <input type="password" class="form-control" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">New Password</label>
+                                        <input type="password" class="form-control" required minlength="8">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Confirm New Password</label>
+                                        <input type="password" class="form-control" required minlength="8">
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-dark">Update Password</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <hr class="my-4">
+                        <div class="settings-group">
+                            <h5>Notification Preferences</h5>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="emailNotif" checked>
+                                <label class="form-check-label" for="emailNotif">
+                                    Email notifications
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="smsNotif">
+                                <label class="form-check-label" for="smsNotif">
+                                    SMS notifications
+                                </label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="promoNotif" checked>
+                                <label class="form-check-label" for="promoNotif">
+                                    Promotional offers
+                                </label>
+                            </div>
+                            <button class="btn btn-dark" onclick="alert('Preferences saved!')">Save Preferences</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT US PAGE -->
+    <div id="contact-content" style="display: none;">
+        <div class="container py-5">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#" onclick="showHome()">Home</a></li>
+                    <li class="breadcrumb-item active">Contact Us</li>
+                </ol>
+            </nav>
+
+            <div class="row g-5">
+                <!-- Contact Information -->
+                <div class="col-lg-5">
+                    <div class="section-header mb-4">
+                        <h2 class="section-title mb-3">Get In Touch</h2>
+                        <p class="text-muted">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                    </div>
+
+                    <div class="contact-info-card mb-4">
+                        <div class="contact-info-item mb-4">
+                            <div class="d-flex align-items-start">
+                                <div class="contact-icon me-3">
+                                    <i class="fas fa-map-marker-alt fa-lg"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-2">Visit Us</h6>
+                                    <p class="text-muted mb-0">Thamel, Kathmandu<br>Nepal</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item mb-4">
+                            <div class="d-flex align-items-start">
+                                <div class="contact-icon me-3">
+                                    <i class="fas fa-phone-alt fa-lg"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-2">Call Us</h6>
+                                    <p class="text-muted mb-0">+977 9800000000<br>Mon-Sat: 10am - 7pm</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item mb-4">
+                            <div class="d-flex align-items-start">
+                                <div class="contact-icon me-3">
+                                    <i class="fas fa-envelope fa-lg"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-2">Email Us</h6>
+                                    <p class="text-muted mb-0">hello@chiclook.com<br>support@chiclook.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <h6 class="fw-bold mb-3">Follow Us</h6>
+                            <div class="social-links">
+                                <a href="https://instagram.com" target="_blank" class="btn btn-outline-dark btn-sm me-2">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                                <a href="https://facebook.com" target="_blank" class="btn btn-outline-dark btn-sm me-2">
+                                    <i class="fab fa-facebook"></i> Facebook
+                                </a>
+                                <a href="https://tiktok.com" target="_blank" class="btn btn-outline-dark btn-sm">
+                                    <i class="fab fa-tiktok"></i> TikTok
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="col-lg-7">
+                    <div class="contact-form-wrapper">
+                        <h3 class="mb-4">Send Us a Message</h3>
+                        <!-- Bootstrap Form -->
+                        <form id="contactForm" onsubmit="submitContactForm(event)">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">First Name *</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Last Name *</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Email *</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Phone</label>
+                                    <input type="tel" class="form-control" id="phone">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Subject *</label>
+                                    <select class="form-select" id="subject" required>
+                                        <option value="">Select a subject</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="order">Order Status</option>
+                                        <option value="product">Product Question</option>
+                                        <option value="return">Returns & Exchanges</option>
+                                        <option value="shipping">Shipping Information</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Message *</label>
+                                    <textarea class="form-control" id="message" rows="6" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="newsletter">
+                                        <label class="form-check-label" for="newsletter">
+                                            Subscribe to our newsletter for exclusive offers
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-dark btn-lg w-100">
+                                        <i class="fas fa-paper-plane me-2"></i>Send Message
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div id="formSuccess" class="alert alert-success mt-4" style="display: none;">
+                            <i class="fas fa-check-circle me-2"></i>Thank you for your message! We'll get back to you soon.
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <hr class="footer-divider">
+            <!-- FAQ Section -->
+            <div class="mt-5 pt-5">
+                <div class="text-center mb-5">
+                    <h3 class="section-title">Frequently Asked Questions</h3>
+                    <p class="text-muted">Quick answers to common questions</p>
+                </div>
 
-            <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p>&copy; 2026 CHICLOOK - Classic, Smart, Colorful. All rights reserved.</p>
-                    <div class="footer-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                        What are your shipping options?
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        We offer free expedited shipping on all orders within Nepal. Delivery typically takes 2-3 business days in Kathmandu Valley and 3-5 business days for other regions.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                        What is your return policy?
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        We accept returns within 30 days of purchase. Items must be unworn, unwashed, and in original condition with tags attached. Contact us to initiate a return.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                        Are all products authentic?
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Yes! We guarantee 100% authenticity on all our products. Every item comes with a certificate of authenticity and original packaging.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                        How can I track my order?
+                                    </button>
+                                </h2>
+                                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Once your order ships, you'll receive a tracking number via email. You can also track your order status in your account dashboard.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCT DETAIL PAGE -->
+    <div id="product-detail" style="display: none;">
+        <div class="container py-5">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#" onclick="showHome()">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#" onclick="showHome()">Products</a></li>
+                    <li class="breadcrumb-item active" id="breadcrumb-product">Product</li>
+                </ol>
+            </nav>
+
+            <div class="row g-5">
+                <!-- Product Images -->
+                <div class="col-lg-6">
+                    <div class="product-image-main mb-3">
+                        <img id="detail-image" src="" alt="" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="col-lg-6">
+                    <p class="text-muted text-uppercase small mb-2" id="detail-category">Category</p>
+                    <h1 class="product-title mb-3" id="detail-name">Product Name</h1>
+                    
+                    <!-- Rating -->
+                    <div class="product-rating mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="far fa-star text-warning"></i>
+                        <span class="text-muted ms-2">(4.0 Reviews)</span>
+                    </div>
+
+                    <!-- Price -->
+                    <h2 class="product-price mb-4" id="detail-price">NPR 0</h2>
+
+                    <!-- Description -->
+                    <div class="product-description mb-4">
+                        <h5 class="mb-3">Description</h5>
+                        <p class="text-muted" id="detail-description"></p>
+                    </div>
+
+                    <!-- Quantity Selector -->
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Quantity</label>
+                        <div class="input-group" style="max-width: 150px;">
+                            <button class="btn btn-outline-secondary" type="button" onclick="decreaseQty()">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <input type="text" class="form-control text-center" id="qty" value="1" readonly>
+                            <button class="btn btn-outline-secondary" type="button" onclick="increaseQty()">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="d-grid gap-2 mb-3">
+                        <button class="btn btn-dark btn-lg py-3" onclick="addToCart()">
+                            <i class="fas fa-shopping-bag me-2"></i>Add to Bag
+                        </button>
+                        <button class="btn btn-outline-dark btn-lg py-3" onclick="addToWishlist()">
+                            <i class="far fa-heart me-2"></i>Add to Wishlist
+                        </button>
+                    </div>
+
+                    <!-- Product Features -->
+                    <div class="product-features">
+                        <div class="feature-item mb-2">
+                            <i class="fas fa-shipping-fast text-muted me-2"></i>
+                            <span>Free expedited shipping</span>
+                        </div>
+                        <div class="feature-item mb-2">
+                            <i class="fas fa-undo text-muted me-2"></i>
+                            <span>Easy returns within 30 days</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt text-muted me-2"></i>
+                            <span>100% authentic guarantee</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content bg-dark">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage" src="" class="img-fluid" alt="">
+                    <div class="modal-caption text-white mt-3" id="modalCaption"></div>
+                </div>
+                <div class="modal-footer border-0 justify-content-between">
+                    <button class="btn btn-outline-light" onclick="navigateModal(-1)">
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    <button class="btn btn-outline-light" onclick="navigateModal(1)">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">CHIC LOOK</h5>
+                    <p class="text-muted">Your destination for luxury fashion and authentic designer goods.</p>
+                    <div class="social-icons mt-4">
+                        <a href="https://instagram.com" target="_blank" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="https://tiktok.com" target="_blank" class="text-white me-3"><i class="fab fa-tiktok fa-lg"></i></a>
+                        <a href="https://pinterest.com" target="_blank" class="text-white"><i class="fab fa-pinterest fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="mb-4">Shop</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" onclick="showAllProducts()" class="text-muted text-decoration-none">New Arrivals</a></li>
+                        <li class="mb-2"><a href="#" onclick="filterProducts('Purse')" class="text-muted text-decoration-none">Bags</a></li>
+                        <li class="mb-2"><a href="#" onclick="filterProducts('Ladies Wear')" class="text-muted text-decoration-none">Clothing</a></li>
+                        <li class="mb-2"><a href="#" onclick="filterProducts('Women')" class="text-muted text-decoration-none">Shoes</a></li>
+                        <li class="mb-2"><a href="#" onclick="filterProducts('Accessories')" class="text-muted text-decoration-none">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="mb-4">Customer Care</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Contact Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Shipping</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Returns</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">FAQ</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="mb-4">About</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Our Story</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Careers</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Press</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="mb-4">Newsletter</h6>
+                    <p class="text-muted small">Subscribe to get special offers and updates.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-light" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-muted small mb-0">&copy; 2026 Chic Look. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-muted text-decoration-none small me-3">Privacy Policy</a>
+                    <a href="#" class="text-muted text-decoration-none small me-3">Terms of Service</a>
+                    <a href="#" class="text-muted text-decoration-none small">Cookie Policy</a>
                 </div>
             </div>
         </div>
     </footer>
-      
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 </html>
